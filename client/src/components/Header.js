@@ -13,7 +13,7 @@ class Header extends Component{
       default:
       return [
         <li key={1}><Payments/></li>,
-        <li key={2} ><Link to={"/surveys"}>Credits: {5}</Link></li>,
+        <li key={2} style={{margin: "0px 10px"}} >Credits: {this.props.auth.credits}</li>,
         <li key={3} ><a href="/api/logout">Log out</a></li>
       ];
 
@@ -24,9 +24,9 @@ class Header extends Component{
     return(
       <nav>
         <div className="nav-wrapper">
-          <Link to={this.props.auth ? "/surveys": "/"} className="left brand-logo">Emaily</Link>
-          <ul className="right ">
-            {this.renderContent()}
+          <Link to={this.props.auth ? "/surveys": "/"} className="left brand-logo col">Emaily</Link>
+          <ul className="right col">
+            { this.renderContent() }
           </ul>
         </div>
       </nav>

@@ -3,6 +3,5 @@ import authReducer from './authReducer';
 
 
 export default combineReducers({
-  auth: authReducer,
-  //survey: surveyReducer 
+  auth: authReducer
 });
