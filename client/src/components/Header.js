@@ -1,7 +1,7 @@
 import React, {Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-
+import Payments from './Payments'
 class Header extends Component{
 
   renderContent(){
@@ -11,7 +11,11 @@ class Header extends Component{
       case false:
         return <li><a href="/auth/google">Log in with google</a></li>;
       default:
-        return <li><a href="/api/logout">Log out</a></li>;
+      return [
+        <li key={1}><Payments/></li>,
+        <li key={2} ><Link to={"/surveys"}>Credits: {5}</Link></li>,
+        <li key={3} ><a href="/api/logout">Log out</a></li>
+      ];
 
     }
   }
@@ -19,13 +23,13 @@ class Header extends Component{
   render(){
     return(
       <nav>
-      <div className="nav-wrapper">
-        <Link to={this.props.auth ? "/surveys": "/"} className="left brand-logo">Emaily</Link>
-        <ul  className="right">
-          {this.renderContent()}
-        </ul>
-      </div>
-    </nav>
+        <div className="nav-wrapper">
+          <Link to={this.props.auth ? "/surveys": "/"} className="left brand-logo">Emaily</Link>
+          <ul className="right ">
+            {this.renderContent()}
+          </ul>
+        </div>
+      </nav>
           
     );
   }
