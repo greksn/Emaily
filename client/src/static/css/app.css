@@ -9,13 +9,27 @@
 
 .overlay {
   position: relative;
-  background-color: rgba(0, 0, 0,0.5);
+  background-color: rgba(0, 0, 0,0.4);
   height: 100%;
   width: 100%;
 }
+
 .cont{
   text-align: center;
   color: #DDD;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding-top: 100px;
 }
+
+.dashboard{
+  background-image: url("../img/mail3.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  height: 100vh;
+}
+
+.row{
+  margin: 0;
+}
+
